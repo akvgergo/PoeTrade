@@ -67,8 +67,9 @@ namespace PoeTrade.Utility {
             return new JProperty("option", option.GetCustomAttributes(false).OfType<QueryComponentAttribute>().First().Name);
         }
 
-        public static JProperty ParseSortOption(this SortOption so) {
-            return new JProperty(so.Stat, so.Direction);
+        public static JObject ParseSort(this SortOption so) {
+            var prop = new JProperty(so.Stat, so.Direction == SortDirection.Ascending ? "asc" : "desc");
+            return new JObject(prop);
         }
     }
 }

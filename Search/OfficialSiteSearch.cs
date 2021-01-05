@@ -44,13 +44,10 @@ namespace PoeTrade.Search {
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));
         }
 
-        public static void Query(ItemFilter filter) {
-            JObject obj = new JObject();
-            var query = obj["query"] = new JObject();
-            var filters = query["filters"] = new JObject(JsonParser.CreateQueryComponent(filter.Base));
+        public static void Query(Query q) {
             
             Console.WriteLine(
-            _client.PostAsync(tradeEP, new StringContent(obj.ToString(), Encoding.UTF8, "application/json")).Result.Content.ReadAsStringAsync().Result
+            _client.PostAsync(tradeEP, new StringContent(q.QueryJson.ToString(), Encoding.UTF8, "application/json")).Result.Content.ReadAsStringAsync().Result
             );
         }
     }

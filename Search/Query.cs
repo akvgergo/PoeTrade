@@ -20,12 +20,14 @@ namespace PoeTrade.Search {
         /// Creates a new query from an <see cref="ItemFilter"/>.
         /// </summary>
         public Query(ItemFilter filter, PlayerStatus status = PlayerStatus.Online, SortOption sort = null) {
-            QueryJson = new JObject("query");
+            QueryJson = new JObject();
+            var query = QueryJson["query"] = new JObject();
 
-            QueryJson["status"] = JsonParser.ParseOption(status);
-            QueryJson["sort"] = JsonParser.ParseSortOption(sort ?? new SortOption());
+            QueryJson["sort"] = JsonParser.ParseSort(sort ?? new SortOption());
 
-            QueryJson["filters"] = new JObject(JsonParser.CreateQueryComponent(filter.Base));
+            query["status"] = new JObject(JsonParser.ParseOption(status));
+
+            query["filters"] = new JObject(JsonParser.CreateQueryComponent(filter.Base));
         }
     }
 
