@@ -64,9 +64,12 @@
   <ItemGroup>
     <Compile Include="Filtering\Enums\ItemCategory.cs" />
     <Compile Include="Filtering\Enums\ItemRarity.cs" />
+    <Compile Include="Filtering\FilterComp\DefenseFilter.cs" />
+    <Compile Include="Filtering\FilterComp\SocketFilter.cs" />
     <Compile Include="Filtering\FilterComp\TypeFilter.cs" />
     <Compile Include="Filtering\FilterComp\IFilterComponent.cs" />
     <Compile Include="Filtering\FilterComp\OffenseFilter.cs" />
+    <Compile Include="Filtering\SocketValues.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Search\OfficialSiteSearch.cs" />
     <Compile Include="Program.cs" />

@@ -15,7 +15,7 @@ namespace PoeTrade {
 
             ItemFilter filter = new ItemFilter();
             filter.Base = new Filtering.TypeFilter();
-            filter.Offense = new Filtering.OffenseFilter(aps: 2);
+            filter.Offense = new Filtering.OffenseFilter();
             OfficialSiteSearch.Query(new Query(filter));
 
             Console.ReadKey();

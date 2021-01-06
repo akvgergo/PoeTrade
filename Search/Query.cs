@@ -27,7 +27,11 @@ namespace PoeTrade.Search {
 
             query["status"] = new JObject(JsonParser.ParseOption(status));
 
-            query["filters"] = new JObject(JsonParser.CreateQueryComponent(filter.Base));
+            var filters = query["filters"] = new JObject();
+
+            filters.Children().Append(filter.Base.CreateQueryComponent());
+            filters.Children().Append(filter.Defense.CreateQueryComponent());
+            filters.Children().Append(filter.Offense.CreateQueryComponent());
         }
     }
 

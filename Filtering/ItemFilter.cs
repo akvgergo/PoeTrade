@@ -16,6 +16,8 @@ namespace PoeTrade {
 
         public OffenseFilter Offense { get; set; }
 
+        public DefenseFilter Defense { get; set; }
+
 
     }
 }

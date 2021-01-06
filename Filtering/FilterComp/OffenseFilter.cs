@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PoeTrade.Filtering {
 
     /// <summary>
-    /// Represents the different attack values for a weapon.
+    /// Represents the different attack values for an item.
     /// </summary>
     [QueryComponent("weapon_filters")]
     public class OffenseFilter : IFilterComponent {
